@@ -13,7 +13,10 @@ TextureImporter:
     second: Spikes
   - first:
       213: 2291900665083654264
-    second: GPJ_2D_Platformer_Sprites_3
+    second: Player_Walking_1
+  - first:
+      213: 2617501226011934520
+    second: Player_Walking_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -173,7 +176,7 @@ TextureImporter:
         width: 15
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,6 +184,48 @@ TextureImporter:
       bones: []
       spriteID: 23e9134141d45c270800000000000000
       internalID: 8270101039369264690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 112
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 870faca03877ecf10800000000000000
+      internalID: 2291900665083654264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 112
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f37973f7b335420800000000000000
+      internalID: 2617501226011934520
       vertices: []
       indices: 
       edges: []

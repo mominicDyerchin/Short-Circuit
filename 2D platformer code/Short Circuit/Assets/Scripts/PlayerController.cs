@@ -16,10 +16,17 @@ public class PlayerController : MonoBehaviour
 
     private bool doubleJumped;
 
+    private Animator anim;
+
     public LevelManager levelManager;
+    private SpriteRenderer spriteRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (!spriteRenderer) Debug.LogError("Can't Find the Sprite Renderer");
+        anim = GetComponent<Animator>();
         levelManager = FindObjectOfType<LevelManager>();
     }
 
@@ -34,8 +41,14 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //JUMP CODE
-        if(grounded) { doubleJumped = false; }
-        if(Input.GetKeyDown(KeyCode.Space) && grounded)
+        if(grounded) 
+        {
+            doubleJumped = false;
+        }
+
+        anim.SetBool("Grounded", grounded);
+
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             Jump();
         }
@@ -75,6 +88,20 @@ public class PlayerController : MonoBehaviour
                 moveHoriz(-moveSpeed);
             }
         }
+
+        // WALKING ANIMATION
+        anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
+        
+        //PLAYER FLIPPING
+        if(GetComponent<Rigidbody2D>().velocity.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        } 
+        else if (GetComponent<Rigidbody2D>().velocity.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        
 
     }
     public void Jump()
